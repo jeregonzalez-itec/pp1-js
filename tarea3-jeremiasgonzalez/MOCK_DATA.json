@@ -1,4 +1,4 @@
-const users = [{"id":1,"first_name":"Vanni","last_name":"Bocke","email":"vbocke0@booking.com","gender":"Female","ip_address":"232.160.101.102"},
+[{"id":1,"first_name":"Vanni","last_name":"Bocke","email":"vbocke0@booking.com","gender":"Female","ip_address":"232.160.101.102"},
 {"id":2,"first_name":"Lissa","last_name":"Boniface","email":"lboniface1@thetimes.co.uk","gender":"Genderqueer","ip_address":"203.172.164.164"},
 {"id":3,"first_name":"Romonda","last_name":"Drains","email":"rdrains2@bigcartel.com","gender":"Female","ip_address":"87.187.26.112"},
 {"id":4,"first_name":"Giacobo","last_name":"Reany","email":"greany3@aboutads.info","gender":"Bigender","ip_address":"120.135.189.218"},
@@ -48,30 +48,3 @@ const users = [{"id":1,"first_name":"Vanni","last_name":"Bocke","email":"vbocke0
 {"id":48,"first_name":"Kalina","last_name":"Keach","email":"kkeach1b@answers.com","gender":"Agender","ip_address":"55.143.157.207"},
 {"id":49,"first_name":"Gregory","last_name":"Lory","email":"glory1c@ucsd.edu","gender":"Male","ip_address":"79.187.96.167"},
 {"id":50,"first_name":"Moe","last_name":"Spellecy","email":"mspellecy1d@shop-pro.jp","gender":"Male","ip_address":"182.106.49.104"}]
-
-let busqueda = parseInt(prompt("Ingresa un id:"));
- const buscador = users.find((user) => {
-   return user.id === busqueda;
-});
-
-if (buscador) {
-   console.log(buscador);
-   } else {
-   alert("ERROR: usuario no encontrado");
-}
-
-const generos = users.reduce((acc, user) => {
-  const gender = user.gender;
-  
-  if (acc[gender]) {
-    acc[gender]++;
-  } else {
-    acc[gender] = 1;
-  }
-  return acc;
-}, {});
-if (generos){
-    console.log(generos)
-}else{
-  console.log('Not Found ')
-}
