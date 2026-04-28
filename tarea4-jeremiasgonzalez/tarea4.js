@@ -77,10 +77,10 @@ const ahorro = balanceMensual(users);
 console.log(usuariosClasificados(ahorro));
 
 //PUNTO 3 Y 4 
-function agrupaciones(users) {
+const agrupaciones = (users) => {
     const resultado = users.reduce((acc, u) => {
         const banco = u.bank;
-        const ahorro = balanceMensual([u]); 
+        const ahorro = balance(u); 
         const pais = u.country;
         if (!acc[banco]) {
             acc[banco] = {
