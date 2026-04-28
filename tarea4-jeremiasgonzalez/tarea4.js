@@ -77,7 +77,7 @@ const ahorro = balanceMensual(users);
 console.log(usuariosClasificados(ahorro));
 
 //PUNTO 3 Y 4 
-const agrupaciones = (users) => {
+function agrupaciones (users) {
     const resultado = users.reduce((acc, u) => {
         const banco = u.bank;
         const ahorro = balance(u); 
@@ -89,6 +89,9 @@ const agrupaciones = (users) => {
                 ahorroTotal: 0
             };
         }
+          acc[banco].cantidadUsuarios++;
+          acc[banco].ahorroTotal += ahorro;
+
         if (!acc[pais]) {
             acc[pais] = {
                 country: pais,
@@ -96,10 +99,9 @@ const agrupaciones = (users) => {
                 ahorroTotal: 0
             };
         }
-        acc[banco].cantidadUsuarios++;
-        acc[banco].ahorroTotal += ahorro;
         acc[pais].cantidadUsuarios++;
         acc[pais].ahorroTotal += ahorro;
+
         return acc;
     }, {});
     return Object.values(resultado);
