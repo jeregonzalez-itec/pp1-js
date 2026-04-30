@@ -76,35 +76,27 @@ const usuariosClasificados = (balance) => {
 const ahorro = balanceMensual(users);
 console.log(usuariosClasificados(ahorro));
 
-//PUNTO 3 Y 4 
-function agrupaciones (users) {
-    const resultado = users.reduce((acc, u) => {
-        const banco = u.bank;
-        const ahorro = balance(u); 
-        const pais = u.country;
-        if (!acc[banco]) {
-            acc[banco] = {
-                bank: banco,
-                cantidadUsuarios: 0,
-                ahorroTotal: 0
-            };
-        }
-          acc[banco].cantidadUsuarios++;
-          acc[banco].ahorroTotal += ahorro;
+//PUNTO 3 Y 4 CORREGIDO
+const agruparPor = (users, clave) => {
+  const resultado = {};
+    users.forEach((user) => {
+    const valorClave = user[clave];
 
-        if (!acc[pais]) {
-            acc[pais] = {
-                country: pais,
-                cantidadUsuarios: 0,
-                ahorroTotal: 0
-            };
-        }
-        acc[pais].cantidadUsuarios++;
-        acc[pais].ahorroTotal += ahorro;
+    if (!resultado[valorClave])
+      resultado[valorClave] = {
+        [clave]: valorClave,
+        cantidadTotal: 0,
+        ahorroTotal: 0
+      };
 
-        return acc;
-    }, {});
-    return Object.values(resultado);
-};
+    resultado[valorClave].cantidadTotal++;
+    resultado[valorClave].ahorroTotal += balance(user);
+  });
 
-console.log(agrupaciones(users));
+  return resultado;
+}
+
+const cantidadPorBanco = agruparPor(users, "bank");
+const cantidadPorPais = agruparPor(users, "country");
+console.log(cantidadPorBanco);
+console.log(cantidadPorPais);
