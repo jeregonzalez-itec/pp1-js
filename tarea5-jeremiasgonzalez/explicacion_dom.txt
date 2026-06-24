@@ -1,42 +1,537 @@
-Explicación del DOM en JavaScript
+# JAVASCRIPT - GUÍA RÁPIDA PARA WEB APPS Y E-COMMERCE
 
-El DOM (Document Object Model) es una interfaz de programación para documentos HTML y XML. Representa la estructura de un documento web como un árbol de objetos, donde cada elemento del HTML (como etiquetas, texto, atributos) se convierte en un nodo en este árbol. Esto permite a los programas JavaScript acceder y manipular dinámicamente el contenido, la estructura y el estilo de una página web sin necesidad de recargar la página.
+# 1. SELECCIONAR ELEMENTOS DEL DOM
 
-En otras palabras, el DOM es como un puente entre el HTML estático y el JavaScript dinámico, permitiendo que el código JavaScript interactúe con la página web en tiempo real. Por ejemplo, puedes cambiar el texto de un párrafo, agregar nuevos elementos o responder a eventos del usuario como clics o movimientos del mouse.
+```js
+document.getElementById("id")
+```
 
-Métodos comunes para utilizar el DOM:
+```js
+document.querySelector(".clase")
+document.querySelector("#id")
+document.querySelector("button")
+```
 
-1. getElementById: Este método busca un elemento en el documento por su atributo "id". Por ejemplo, si tienes un elemento con id="miParrafo", puedes obtenerlo para modificarlo.
+```js
+document.querySelectorAll(".card")
+```
 
-2. getElementsByClassName: Busca todos los elementos que tienen una clase específica. Por ejemplo, si varios elementos tienen la clase "destacado", puedes obtener una lista de ellos.
+---
 
-3. getElementsByTagName: Obtiene todos los elementos de un tipo de etiqueta específico, como todos los párrafos ("p") o todos los enlaces ("a").
+# 2. MODIFICAR CONTENIDO
 
-4. querySelector: Selecciona el primer elemento que coincide con un selector CSS. Por ejemplo, puedes buscar el primer elemento con una clase o un id usando sintaxis similar a CSS.
+```js
+element.textContent = "Hola"
+```
 
-5. querySelectorAll: Similar a querySelector, pero devuelve todos los elementos que coinciden con el selector, no solo el primero.
+```js
+element.innerHTML = "<h1>Hola</h1>"
+```
 
-6. createElement: Crea un nuevo elemento HTML en memoria, que luego puedes agregar al documento.
+Reemplaza todo el contenido interno.
 
-7. appendChild: Agrega un elemento hijo a otro elemento existente en el DOM.
+```js
+element.innerHTML += "<p>Nuevo</p>"
+```
 
-8. removeChild: Elimina un elemento hijo de su elemento padre.
+Agrega contenido.
 
-9. setAttribute: Establece o cambia el valor de un atributo de un elemento, como cambiar el "src" de una imagen.
+---
 
-10. getAttribute: Obtiene el valor de un atributo de un elemento.
+# 3. MODIFICAR CLASES
 
-Estos métodos permiten navegar por el árbol del DOM, seleccionar elementos específicos y modificarlos para crear páginas web interactivas. Recuerda que el DOM es una representación en vivo del documento, por lo que los cambios se reflejan inmediatamente en la página.
+```js
+element.classList.add("active")
+```
 
-El árbol DOM: El DOM organiza los elementos de un documento HTML en una estructura jerárquica similar a un árbol genealógico. El nodo raíz es el documento mismo, seguido del elemento <html>, que tiene hijos como <head> y <body>. Cada elemento puede tener hijos, atributos y texto. Esta estructura permite navegar de padre a hijo, hermano a hermano, etc. Por ejemplo, para acceder al primer párrafo dentro del body, puedes empezar desde el documento y descender por los nodos.
+```js
+element.classList.remove("active")
+```
 
-Ejemplo breve en código (para ilustrar, no para ejecutar directamente):
-// Obtener el elemento con id "miParrafo"
-var parrafo = document.getElementById("miParrafo");
-// Cambiar su texto
-parrafo.textContent = "Nuevo texto";
+```js
+element.classList.toggle("active")
+```
 
+```js
+element.classList.contains("active")
+```
 
+---
 
+# 4. MODIFICAR ESTILOS
 
-Este ejemplo muestra cómo seleccionar un elemento y modificar su contenido usando el DOM.
+```js
+element.style.display = "none"
+```
+
+```js
+element.style.backgroundColor = "red"
+```
+
+---
+
+# 5. CREAR ELEMENTOS
+
+```js
+document.createElement("div")
+```
+
+Ejemplo:
+
+```js
+const card = document.createElement("article");
+```
+
+---
+
+# 6. INSERTAR ELEMENTOS
+
+```js
+parent.appendChild(child)
+```
+
+```js
+parent.append(child)
+```
+
+```js
+parent.prepend(child)
+```
+
+---
+
+# 7. ELIMINAR ELEMENTOS
+
+```js
+element.remove()
+```
+
+```js
+parent.removeChild(child)
+```
+
+---
+
+# 8. REEMPLAZAR ELEMENTOS
+
+```js
+oldElement.replaceWith(newElement)
+```
+
+---
+
+# 9. ATRIBUTOS
+
+```js
+element.setAttribute("src", "img.jpg")
+```
+
+```js
+element.getAttribute("src")
+```
+
+```js
+element.removeAttribute("disabled")
+```
+
+---
+
+# 10. FORMULARIOS
+
+```js
+input.value
+```
+
+```js
+form.reset()
+```
+
+---
+
+# 11. EVENTOS
+
+## Click
+
+```js
+button.addEventListener("click", () => {
+
+});
+```
+
+## Input
+
+```js
+input.addEventListener("input", (e) => {
+
+});
+```
+
+## Submit
+
+```js
+form.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+});
+```
+
+---
+
+# 12. EVENT OBJECT
+
+```js
+event.target
+```
+
+```js
+event.target.value
+```
+
+```js
+event.preventDefault()
+```
+
+---
+
+# 13. DATASET
+
+HTML
+
+```html
+<button data-id="5">
+```
+
+JS
+
+```js
+button.dataset.id
+```
+
+---
+
+# 14. NAVEGAR EL DOM
+
+```js
+element.parentElement
+```
+
+```js
+element.children
+```
+
+```js
+element.firstElementChild
+```
+
+```js
+element.lastElementChild
+```
+
+```js
+element.nextElementSibling
+```
+
+```js
+element.previousElementSibling
+```
+
+---
+
+# ARRAYS
+
+# 15. FOREACH
+
+Recorrer
+
+```js
+array.forEach(item => {
+
+});
+```
+
+---
+
+# 16. MAP
+
+Transformar
+
+```js
+const nuevo = array.map(item => {
+
+    return item;
+
+});
+```
+
+---
+
+# 17. FILTER
+
+Filtrar
+
+```js
+const filtrados = array.filter(item => {
+
+    return condicion;
+
+});
+```
+
+---
+
+# 18. FIND
+
+Buscar uno
+
+```js
+const item = array.find(item => {
+
+    return condicion;
+
+});
+```
+
+---
+
+# 19. FINDINDEX
+
+Buscar índice
+
+```js
+const index = array.findIndex(item => {
+
+    return condicion;
+
+});
+```
+
+---
+
+# 20. SOME
+
+Al menos uno
+
+```js
+array.some(item => {
+
+    return condicion;
+
+});
+```
+
+---
+
+# 21. EVERY
+
+Todos
+
+```js
+array.every(item => {
+
+    return condicion;
+
+});
+```
+
+---
+
+# 22. REDUCE
+
+Acumular
+
+```js
+array.reduce((acc, item) => {
+
+    return acc;
+
+}, valorInicial);
+```
+
+---
+
+# 23. SORT
+
+Ordenar
+
+```js
+array.sort((a,b) => a.price - b.price)
+```
+
+---
+
+# 24. INCLUDES
+
+```js
+array.includes(valor)
+```
+
+---
+
+# 25. PUSH
+
+Agregar
+
+```js
+array.push(item)
+```
+
+---
+
+# 26. POP
+
+Eliminar último
+
+```js
+array.pop()
+```
+
+---
+
+# 27. SHIFT
+
+Eliminar primero
+
+```js
+array.shift()
+```
+
+---
+
+# 28. UNSHIFT
+
+Agregar primero
+
+```js
+array.unshift(item)
+```
+
+---
+
+# 29. SPLICE
+
+Eliminar o insertar
+
+```js
+array.splice(indice, cantidad)
+```
+
+---
+
+# 30. SLICE
+
+Copiar parte
+
+```js
+array.slice(inicio, fin)
+```
+
+---
+
+# FETCH API
+
+```js
+const getData = async () => {
+
+    const response = await fetch(url);
+
+    const data = await response.json();
+
+};
+```
+
+---
+
+# PATRÓN PARA WEB APPS
+
+# Obtener datos
+
+```js
+getProducts()
+```
+
+# Guardar datos
+
+```js
+listaProductos = datos
+```
+
+# Renderizar
+
+```js
+renderProducts(listaProductos)
+```
+
+# Buscar
+
+```js
+const filtrados = listaProductos.filter(...)
+```
+
+# Volver a renderizar
+
+```js
+renderProducts(filtrados)
+```
+
+---
+
+# E-COMMERCE BÁSICO
+
+Productos:
+
+```js
+let listaProductos = []
+```
+
+Carrito:
+
+```js
+let listaCarrito = []
+```
+
+Agregar producto:
+
+```js
+listaCarrito.push(producto)
+```
+
+Buscar producto:
+
+```js
+const producto = listaProductos.find(...)
+```
+
+Mostrar carrito:
+
+```js
+renderProducts(listaCarrito)
+```
+
+Eliminar producto:
+
+```js
+listaCarrito.splice(indice, 1)
+```
+
+Actualizar pantalla:
+
+```js
+renderProducts(listaCarrito)
+```
+
+---
+
+# REGLA DE ORO
+
+Datos
+↓
+Array
+↓
+map/filter/find
+↓
+HTML
+↓
+innerHTML
+↓
+Pantalla
