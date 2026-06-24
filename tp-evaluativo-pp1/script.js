@@ -25,6 +25,7 @@ const getProducts = async () => {
   botonObtener.addEventListener("click", ()=>{
     document.getElementById("pantalla").textContent = JSON.stringify(datos, null, 2);
   });
+
   renderProducts(listaProductos);
   btnCrud.addEventListener('click', () => {
       hero.classList.add('hidden');
@@ -35,11 +36,10 @@ const getProducts = async () => {
   });
  
   btnCart.addEventListener("click", () => { 
-
     hero.classList.add('hidden');
     productContainer.classList.add('hidden');
-      crudContainer.classList.remove('flex'); 
-      crudContainer.classList.add('hidden');
+    crudContainer.classList.remove('flex'); 
+    crudContainer.classList.add('hidden');
     cartContainer.classList.add('md:grid','md:grid-cols-2','md:gap-10','w-screen','md:mx-auto','md:px-40','md:my-20'); 
 
     if(listaCarrito == 0){
@@ -50,7 +50,7 @@ const getProducts = async () => {
       `;
     }else{
     renderCart(listaCarrito);
-      }
+    }
   });
 };
 
@@ -60,7 +60,6 @@ getProducts();
 const renderProducts = (productos) => {
 
   const cardHTML = productos.map((p) => {
-
       return `
         <article class="mx-6 md:mx-1 md:overflow-hidden">
           <div class="h-50 overflow-hidden md:h-auto">
@@ -70,7 +69,6 @@ const renderProducts = (productos) => {
             <p class="nav-links text-sm w-full text-center md:w-auto">${p.nombre ? p.nombre : p.name}</p> <!-- Nombre del producto -->
             <p class="nav-links text-sm mt-1 md:text-center">$${p.precio}</p> <!-- Etiqueta de precio -->
             <div class="flex items-center gap-2">
-              <!-- El botón que le permite al cliente agarrar este producto específico (gracias al data-id). -->
               <button data-id="${p.id}" type="button" class="nav-links underline cursor-pointer add-cart">Comprar</button>
               <img class="h-4 w-4" src="img/bag-3-svgrepo-com.svg" alt="">
             </div>
@@ -81,18 +79,15 @@ const renderProducts = (productos) => {
     
   productContainer.innerHTML = cardHTML;
  
-  asignarEventosBotonesComprar();
+  botonComprar();
 };
 
-const asignarEventosBotonesComprar = () => {
-
+const botonComprar = () => {
   const botonesComprar = document.querySelectorAll('.add-cart');
-
   botonesComprar.forEach(boton => {
     boton.addEventListener('click', (e) => {
 
       const productoId = e.currentTarget.dataset.id;
-
       addToCart(productoId);
     });
   });
@@ -144,11 +139,11 @@ const renderCart = (listaCarrito) => {
     
     cartContainer.innerHTML = productsCart;
    
-    asignarEventosBotonesEliminar(listaCarrito)
+    botonEliminar(listaCarrito)
 }
  
 
-const asignarEventosBotonesEliminar = (listaCarrito) => {
+const botonEliminar = (listaCarrito) => {
   
   const botonesEliminar = document.querySelectorAll('.remove-product');
  
@@ -194,7 +189,7 @@ async function crearArticulo(nuevoArticulo) {
     const datos = await respuesta.json();
     console.log("respuesta POST: ", datos)
     alert("El producto " + datos.nombre + " se ha creado correctamente")
-    getProducts()
+    
 
   } catch (error) {
     console.error("Error al crear artículo:", error);
@@ -229,8 +224,6 @@ async function editarArticulo(nuevoArticulo, id) {
     const datos = await respuesta.json();
     console.log("respuesta PUT: ", datos)
 
-    getProducts()
-
   } catch (error) {
     console.error("Error al editar artículo:", error);
   }
@@ -244,8 +237,6 @@ async function borrarArticulo(id) {
 
     const datos = await respuesta.json();
     console.log("respuesta DELETE: ", datos)
-
-    getProducts()
 
   } catch (error) {
     console.error("Error al borrar artículo:", error);
