@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amatear.cba</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="shortcut icon" href="/img/logo-amatear.jpeg" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+  </head>
+<body>
+ <header class="fixed top-0 right-0 left-0 bg-body z-100">
+  <div class="flex my-auto justify-center bg-verde-amatear px-14">
+      <h1 class="text-white bg-verde-amatear text-xs lg:text-xs">-10% OFF EN EFECTIVO O EN TRANSFERENCIA</h1>
+   </div>
+   <nav class="relative after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
+      <div class="mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
+        <div class="relative flex h-26 items-center justify-between">
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="absolute inset-y-0 left-0 flex items-center">
+              <div class="h-full overflow-hidden md:hidden">
+                <a href="index.html">
+                  <img src="img/logo-amatear.jpeg" alt="Logo AMATEAR" class="max-h-full w-60 scale-150 object-contain md:w-20" />
+                </a>
+              </div>
+            </div>
+            <div class="hidden md:flex w-full items-center px-40 my-15">
+              <div class="flex items-center gap-x-20">
+                <div class="h-full overflow-hidden">
+                  <a href="index.html">
+                    <img
+                        src="img/logo-amatear.jpeg"
+                        alt="Logo AMATEAR"
+                        class="w-22 scale-200 mx-2 object-contain"
+                    />
+                  </a>
+                </div>
+                <ul class="flex space-x-3">
+                  <li>
+                    <a href="#" aria-current="page" class="rounded-md px-3 py-2 text-sm font-medium text-gray-600">
+                      Inicio
+                      </a>
+                  </li>
+                  <li>
+                    <a href="#productos" class="px-3 py-2 text-sm font-medium text-gray-600">
+                        Productos
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="px-3 py-2 text-sm font-medium text-gray-600">
+                        Tips
+                    </a>
+                  </li>
+                  <li>
+                  <a href="#" class="px-3 py-2 text-sm font-medium text-gray-600">
+                      Contacto
+                  </a>
+                  </li>
+                </div>
+
+              </div>
+              <div class="ml-auto flex items-center gap-x-10">
+                <button id="btn-crud" class="cursor-pointer">
+                <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-user">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                          <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                      </button> 
+                       <button id="btn-cart" class="relative cursor-pointer">
+                          <span id="items-cart" class="absolute -top-3 -right-3 flex h-5 w-5 items-center justify-center text-xs text-black">
+                            0
+                          </span>
+
+                          <img
+                            src="img/bag-3-svgrepo-com.svg"
+                            alt="Carrito"
+                            class="h-8"
+                          />
+                        </button>
+
+                      </div>
+
+                    </div>
+             </div>
+          
+          <div class="absolute inset-y-0 gap-x-4 right-4 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center rounded-md p-2 text-black lg:hidden">
+                <span class="absolute -inset-0.5 "></span>
+                <span class="sr-only">Open main menu</span>
+                <img src="img/menu-hotdog-svgrepo-com.svg" class="h-6" alt="">
+              </button>
+            <img src="img/search-line-icon.svg" alt="Logo AMATEAR" class="h-6 md:hidden" />
+            <div class=" relative  md:hidden">
+                  <span  class="absolute -top-3 -right-3 flex h-5 w-5 items-center justify-center text-xs text-black">0</span>
+                  <img src="img/bag-3-svgrepo-com.svg" alt="Logo AMATEAR" class="h-6" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
+      <div class="bg-green-900/50 h-screen w-screen fixed inset-0 z-50"></div>
+        <div class="fixed inset-y-0 left-0 space-y-1 px-2 pt-2 pb-3 bg-white h-screen w-90 z-100">
+          <div class="fixed top-0 right-0 p-4 ">
+            <button type="button" command="--toggle" commandfor="mobile-menu" class="inline-flex items-center justify-center rounded-md p-1 text-white">
+              <span class="sr-only">Close menu</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-8">
+                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        <div class="flex h-full top-0 flex-col items-start my-2 gap-y-6">
+          <a href="#" aria-current="page" class="block rounded-md nav-links px-3 text-base ">Inicio</a>
+            <div class="flex items-center gap-x-2">
+               <a href="#" class="block rounded-md px-3 py-2 text-base nav-links hover:bg-white/5 hover:text-white">Productos</a>
+              <img src="img/arrow-right-svgrepo-com.svg" alt="" class="h-8 w-8 mx-40">
+            </div>
+          <a href="#" class="block px-3 py-2 text-base nav-links hover:bg-white/5 hover:text-white">tips</a>
+          <a href="#" class="block px-3 py-2 text-base nav-links hover:bg-white/5 hover:text-white">Contacto</a>
+        </div>
+        <div class="fixed bottom-0 left-0 w-90 bg-white p-4">
+          <hr class="my-2 border-gray-300/50">
+           <div class="flex items-center gap-x-6 ">
+            <a href="#" class="text-xs nav-links">Iniciar Sesion</a>
+            <a href="#" class="text-xs nav-links">Crear Cuenta</a>
+           </div>
+        </div>
+      </el-disclosure>
+    </nav>
+  </header> 
+  <main id="main">
+    <div id="hero">
+      <section class="mt-36 overflow-x-auto snap-x snap-mandatory">
+        <div class="flex w-max h-full md:hidden">
+          <article class="snap-center w-96 shrink-0">
+            <img src="img/1img-banner.webp" alt="">
+          </article>
+
+          <article class="snap-center w-96 shrink-0">
+            <img src="img/2img-banner.webp" alt="">
+          </article>
+
+        </div>
+        <div class="hidden md:flex">
+          <img class="md:w-full" src="img/1img-banner.webp" alt="">
+        </div>
+      </section>
+      <div class="flex justify-center my-10">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mx-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+        </svg>
+        <span class="text-md ">1</span>
+        <span class="text-md mx-1">/</span>
+        <span class="text-md ">2</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mx-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+        </svg>
+
+      </div>
+       <section class="md:flex md:flex-col md:mx-40">
+         <section class="md:px-30 md:w-full ">
+           <section class="my-4 mx-3 ">
+            <article class="mx-6 md:overflow-hidden">
+              <img class="h-50 w-full mx-auto md:h-auto md:object-cover
+           md:transition md:delay-100 md:duration-300
+            md:ease 
+             md:hover:scale-110" src="img/diadelpadre-amatear.jpeg" alt="DIA DEL PADRE">
+            </article>
+           </section>
+           <section class="gap-4 mx-3 flex flex-col md:flex-row md:h-40 md:gap-1 ">
+             <article class="mx-6 md:overflow-hidden ">
+               <div class="flex justify-center mx-auto md:h-auto md:object-cover
+                            md:transition md:delay-100 md:duration-300 md:ease 
+                            md:hover:scale-110">
+                  <article class="relative">
+                    <img class="h-auto w-auto object-cover" src="img/promos.webp" alt="PROMOS">
+                    <div class="absolute inset-0 bg-body mix-blend-multiply"></div>
+                    <div class="absolute inset-0 flex items-center justify-center px-4">
+                      <p class="titulo verde text-3xl font-bold text-white text-center">
+                        PROMOS
+                      </p>
+                    </div>
+                  </article>
+                </div>
+             </article>
+             <article class="mx-6 md:overflow-hidden">
+               <div class="flex justify-center mx-auto md:h-auto md:object-cover
+                            md:transition md:delay-100 md:duration-300 md:ease 
+                            md:hover:scale-110">
+                 <div class="relative">
+                   <img class="h-auto w-full object-cover" src="img/mates.webp" alt="MATES">
+                   <div class="absolute inset-0 bg-gray-500/30 mix-blend-multiply"></div>
+                   <div class="absolute inset-0 flex items-center justify-center px-4">
+                    <p class="titulo verde text-3xl font-bold text-white text-center">
+                      MATES
+                    </p>
+                   </div>
+                 </div>
+               </div>
+             </article>
+             <article class="mx-6 md:overflow-hidden">
+               <div class="flex justify-center mx-auto md:h-auto md:object-cover
+                            md:transition md:delay-100 md:duration-300 md:ease 
+                            md:hover:scale-110">
+                 <article class="relative overflow-hidden">
+                   <img class="h-auto w-full object-cover scale-100" src="img/termos.webp" alt="MATES">
+                   <div class="absolute inset-0 bg-body mix-blend-multiply"></div>
+                   <div class="absolute inset-0 flex items-center justify-center px-4">
+                    <p class="titulo verde text-3xl font-bold text-white text-center">
+                      TERMOS
+                    </p>
+                   </div>
+                </article>
+               </div>
+             </article>
+           </section>
+         </section>
+      </section>
+    <section class="my-22 w-full">
+        <article class="mx-10">
+          <h2 class="nav-links mx-auto text-center">
+            LA FELICIDAD,sabe a mate🧉.Mates de calidad premium,con los mejores accesorios y envios a todo el pais
+          </h2>
+        </article>
+    </section> 
+    </div>
+      <section class="md:mx-40 md:mb-20">
+        <div class="mt-20 w-full md:flex md:flex-col">
+          <h2 class="verde mx-auto text-xl text-center">Novedades</h2>
+        </div>
+        <div id="product-container" class="grid grid-cols-2 md:grid-cols-3 gap-4 mx-3 mt-8 my-2 md:px-30">
+      </div> 
+ </section>
+  </main>
+  <div id="cart-container"></div>
+  
+
+  <div id="crud-container" class="hidden justify-center items-start gap-8 flex-wrap p-8 mt-20" >
+ 
+    <div class="bg-white p-6 rounded shadow w-full max-w-sm">
+      <h2 class="font-bold mb-4 text-blue-600">Crear Artículo (POST)</h2>
+      <form id="form-crear" class="flex flex-col gap-3">
+        <input type="number" id="id" placeholder="ID" disabled class="border p-2 rounded bg-gray-100 w-full text-gray-500 cursor-not-allowed hidden">
+        <input type="text" id="imagen" placeholder="Imagen" required class="border p-2 rounded">
+        <input type="text" id="nombre" placeholder="Nombre" required class="border p-2 rounded">
+        <input type="text" id="material" placeholder="Material" required class="border p-2 rounded">
+        <input type="number" id="precio" placeholder="Precio" required class="border p-2 rounded">
+        <input type="number" id="stock" placeholder="Stock" required class="border p-2 rounded">
+
+        <button type="submit" class="bg-blue-500 text-white py-2 rounded-xl mt-2 cursor-pointer hover:bg-white hover:border hover:border-2 hover:border-blue-600 hover:text-blue-600">
+          Enviar a la API
+        </button>
+      </form>
+    </div>
+
+    <div class="bg-white p-6 rounded shadow w-full max-w-sm">
+      <h2 class="font-bold mb-4 text-yellow-600">Buscar, Editar o Borrar</h2>
+      <div class="flex gap-2 mb-4">
+        <input type="number" id="buscar-id" placeholder="ID artículo" class="border p-2 rounded w-full">
+        <button onclick="buscarPorId()" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-white hover:border hover:border-2 hover:border-yellow-600 hover:text-yellow-600">
+          Buscar
+        </button>
+        <button onclick="borrarDesdeBusqueda()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-white hover:border hover:border-2 hover:border-red-600 hover:text-red-600">
+          Borrar
+        </button>
+      </div>
+      <form id="form-editar" class="flex flex-col gap-3">
+        <div>
+          <label class="text-xs text-gray-500 block">ID del artículo</label>
+          <input type="number" id="edit-id" readonly class="border p-2 rounded bg-gray-100 w-full text-gray-500 cursor-not-allowed">
+        </div>
+        <input type="text" id="edit-imagen" placeholder="Imagen" required class="border p-2 rounded">
+        <input type="text" id="edit-nombre" placeholder="Nombre" required class="border p-2 rounded">
+        <input type="text" id="edit-material" placeholder="Material" required class="border p-2 rounded">
+        <input type="number" step="0.01" id="edit-precio" placeholder="Precio" required class="border p-2 rounded">
+        <input type="number" id="edit-stock" placeholder="Stock" required class="border p-2 rounded">
+        <button type="submit" class="bg-yellow-600 cursor-pointer py-2 rounded mt-2 hover:bg-white hover:border hover:border-2 hover:border-yellow-600 hover:text-yellow-600">
+          Guardar Cambios (PUT)
+        </button>
+      </form>
+    </div>
+
+  
+    <div class="bg-white p-6 rounded shadow w-full max-w-sm flex flex-col">
+      <button id="obtener-datos" class="bg-green-500 cursor-pointer px-4 py-2 rounded mb-4 hover:bg-green-600">
+        Obtener Artículos (GET)
+      </button>
+      <p class="text-sm font-bold mb-1 text-gray-700">Respuesta del Servidor:</p>
+      <div id="pantalla" class="bg-gray-900 text-green-400 p-4 rounded h-full min-h-[16rem] overflow-auto font-mono text-xs whitespace-pre-wrap">
+        Esperando datos...
+      </div>
+    </div>
+
+  </div>
+  
+
+  <footer class="footer-color h-full text-center text-white py-4">
+    <div class="flex flex-col justify-center gap-y-8 my-3">
+      <img src="img/logo-amatear.jpeg" alt="Logo AMATEAR" class="h-10 mx-auto">
+      <i class="fa-brands fa-instagram"></i>
+      <span class="text-sm">543584394590</span>
+      <span class="text-sm">3584394590</span>
+      <span class="text-sm">amatear.cba.ar@gmail.com</span>
+      <span class="text-sm">Colon 753 </span>
+    </div>
+    <p class="text-xs text-center mt-10">© 2024 AMATEAR.CBA Todos los derechos reservados.</p>
+    
+      <a
+      href="https://api.whatsapp.com/send/?phone=5493584394590&text&type=phone_number&app_absent=0"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-4 z-50
+            flex items-center justify-center
+            h-12 w-12 rounded-full
+            bg-green-600 text-white
+            shadow-lg
+            hover:scale-110 hover:bg-green-600
+            transition-all duration-300"
+    >
+      <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+  </footer> 
+ 
+    <script src="script.js"></script> 
+</body>
+</html>

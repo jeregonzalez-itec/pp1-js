@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Paytone+One&display=swap');
+:root{
+    --bg-color: #E7E0D5;
+    --text-color: #03420D;
+    --font-family: 'Instrument Sans', sans-serif;
+    --font-2-family: 'Paytone One', sans-serif;
+    --footer-background:#2D3E46;
+    --bg-color-add-cart:#2D3E46;
+}
+.paytoneOne{
+    font-family: var(--font-2-family);
+}
+body{
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);    
+    scroll-behavior: smooth;
+}
+.bg-body{
+    background-color: var(--bg-color);
+}
+.bg-verde-amatear{
+    padding: 3px;
+    background-color: var(--text-color);
+}
+.nav-links{
+    color: var(--text-color);
+    font-family: var(--font-family);
+}
+.verde{
+    color: var(--text-color);
+    font-family: var(--font-2-family);
+}
+.footer-color{
+    background-color: var(--footer-background);
+}
+.p-detail-add-cart{
+    background-color: var(--bg-color-add-cart);
+}
